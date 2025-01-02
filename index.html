@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Screen Recorder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Screen & Camera Recorder</h1>
+        <div class="record-options">
+            <select id="recordType">
+                <option value="screen">Screen Recording</option>
+                <option value="camera">Camera Recording</option>
+            </select>
+            <select id="cameraMode">
+                <option value="user">Front Camera</option>
+                <option value="environment">Back Camera</option>
+            </select>
+        </div>
+        <div class="video-controls">
+            <button id="startBtn">Start Recording</button>
+            <button id="stopBtn" disabled>Stop Recording</button>
+            <button id="downloadBtn" disabled>Download Recording</button>
+        </div>
+        <div class="video-container">
+            <h3>Preview</h3>
+            <video id="preview" autoplay muted playsinline></video>
+            <h3>Recorded Video</h3>
+            <video id="recorded" controls playsinline></video>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

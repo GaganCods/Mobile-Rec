@@ -1,0 +1,176 @@
+:root {
+  --primary-color: #4a90e2;
+  --secondary-color: #2ecc71;
+  --background-color: #ffffff;
+  --text-color: #333333;
+  --border-radius: 8px;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+[data-theme="dark"] {
+  --background-color: #1a1a1a;
+  --text-color: #ffffff;
+  --shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  min-height: 100vh;
+  transition: var(--transition);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.record-options {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+select {
+  flex: 1;
+  padding: 12px;
+  border-radius: var(--border-radius);
+  border: 1px solid #ddd;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.video-controls {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+button {
+  flex: 1;
+  padding: 12px 24px;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: var(--transition);
+  font-weight: 500;
+  background: #007bff;
+  color: white;
+}
+
+#startBtn {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+#stopBtn {
+  background-color: #e74c3c;
+  color: white;
+}
+
+#downloadBtn {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+button:not(:disabled):hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+#preview {
+  width: 100%;
+  max-width: 800px;
+  border: 2px solid #333;
+  border-radius: 5px;
+}
+
+.video-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+h3 {
+  margin-bottom: 0.5rem;
+  font-size: 18px;
+  color: #333;
+}
+
+video {
+  width: 100%;
+  border-radius: var(--border-radius);
+  background-color: #000;
+  box-shadow: var(--shadow);
+  max-width: 100%;
+  margin: 10px 0;
+}
+
+#preview, #recorded {
+  width: 100%;
+  max-width: 800px;
+  border: 2px solid var(--text-color);
+  border-radius: var(--border-radius);
+  margin: 0 auto;
+}
+
+#cameraMode {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+  
+  h1 {
+    font-size: 1.5rem;
+  }
+  
+  .record-options {
+    flex-direction: column;
+  }
+  
+  .video-controls {
+    flex-direction: column;
+  }
+  
+  button {
+    width: 100%;
+  }
+  
+  #preview, #recorded {
+    max-width: 100%;
+    margin: 0.5rem auto;
+  }
+  
+  .video-container {
+    gap: 1rem;
+  }
+}
